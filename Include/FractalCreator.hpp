@@ -9,6 +9,14 @@
 
 
 class FractalCreator {
+    public:
+
+    FractalCreator(int width, int height);
+
+    void run();
+
+    void addZoom(const Zoom& zoom);
+
     private:
 
     int m_width{0};
@@ -19,20 +27,13 @@ class FractalCreator {
     ZoomList m_zoomList;
     int m_total{0};
 
-    public:
-
-    FractalCreator(int width, int height);
-
     void calculateIteration();
 
     void CalculateTotalInterations();
 
     void drawFractal();
 
-    void addZoom(const Zoom& zoom);
-
     void saveBitmap(const std::string& fileName);
-
 };
 
 
