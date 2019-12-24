@@ -18,7 +18,7 @@ class Bitmap {
 
     Bitmap(int width, int height);
 
-    bool save(std::string& fileName);
+    bool save(const std::string& fileName);
     
     void setPixel(int x, int y, uint8_t red, uint8_t green, uint8_t blue);
 

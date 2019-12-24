@@ -7,7 +7,7 @@ Bitmap::Bitmap(int width, int height):
 
 Bitmap::~Bitmap(){}
 
-bool Bitmap::save(std::string& fileName) {
+bool Bitmap::save(const std::string& fileName) {
 
     // Populate headers
     BitmapFileHeader fileHeader;
