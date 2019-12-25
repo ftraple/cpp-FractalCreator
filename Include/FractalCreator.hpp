@@ -3,10 +3,11 @@
 
 #include <iostream>
 #include <memory>
+#include <vector>
 #include "Bitmap.hpp"
 #include "Zoom.hpp"
 #include "ZoomList.hpp"
-
+#include "RGB.hpp"
 
 class FractalCreator {
     public:
@@ -16,6 +17,8 @@ class FractalCreator {
     void run();
 
     void addZoom(const Zoom& zoom);
+    
+    void addColorRange(double rangeEnd, const RGB& rgb);
 
     private:
 
@@ -26,10 +29,19 @@ class FractalCreator {
     Bitmap m_bitmap;
     ZoomList m_zoomList;
     int m_total{0};
+    std::vector<int> m_ranges;
+    std::vector<RGB> m_colors;
+    std::vector<int> m_rangeTotals;
+
+    bool m_gotFirstRange{false};
+
+    int getRange(int interations) const;
 
     void calculateIteration();
 
     void CalculateTotalInterations();
+
+    void CalculateRangeTotals();
 
     void drawFractal();
 
